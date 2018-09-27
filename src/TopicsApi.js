@@ -9,7 +9,7 @@ const helper = require('./common/helper')
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function getTopics (config) {
+const getTopics = async (config) => {
   return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/topics`, null)
 }
 
@@ -18,7 +18,7 @@ function getTopics (config) {
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function headTopics (config) {
+const headTopics = async (config) => {
   return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/topics`, null)
 }
 

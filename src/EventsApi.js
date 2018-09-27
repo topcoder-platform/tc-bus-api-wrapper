@@ -10,7 +10,7 @@ const helper = require('./common/helper')
  * @param {Object} reqBody Body of the request to be Posted
  * @returns {Promise}
  */
-function postEvent (config, reqBody) {
+const postEvent = async (config, reqBody) => {
   return helper.reqToBusAPI(config, 'POST', `${config.BUSAPI_URL}/bus/events`, reqBody)
 }
 
@@ -20,7 +20,7 @@ function postEvent (config, reqBody) {
  * @param {Object} reqBody Body of the request to be Posted
  * @returns {Promise}
  */
-function postError (config, reqBody) {
+const postError = async (config, reqBody) => {
   // Set Error topic from configuration
   reqBody.topic = config.KAFKA_ERROR_TOPIC
   return helper.reqToBusAPI(config, 'POST', `${config.BUSAPI_URL}/bus/events`, reqBody)

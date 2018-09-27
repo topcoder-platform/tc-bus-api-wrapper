@@ -7,7 +7,7 @@ const _ = require('lodash')
  * Function to get M2M token
  * @returns {Promise}
  */
-function getM2Mtoken (config) {
+const getM2Mtoken = async (config) => {
   const m2m = m2mAuth(_.pick(config, ['AUTH0_URL', 'AUTH0_AUDIENCE', 'TOKEN_CACHE_TIME']))
   return m2m.getMachineToken(config.AUTH0_CLIENT_ID, config.AUTH0_CLIENT_SECRET)
 }
@@ -19,7 +19,7 @@ function getM2Mtoken (config) {
  * @param{Object} reqBody Body of the request
  * @returns {Promise}
  */
-function * reqToBusAPI (config, reqType, path, reqBody) {
+const reqToBusAPI = async (config, reqType, path, reqBody) => {
   return getM2Mtoken(config).then((token) => {
     // Based on request type perform necessary action
     switch (reqType) {

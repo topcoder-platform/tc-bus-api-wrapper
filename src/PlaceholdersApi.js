@@ -9,7 +9,7 @@ const helper = require('./common/helper')
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function clearPlaceholdersCache (config) {
+const clearPlaceholdersCache = async (config) => {
   return helper.reqToBusAPI(config, 'DELETE', `${config.BUSAPI_URL}/bus/placeholders`, null)
 }
 

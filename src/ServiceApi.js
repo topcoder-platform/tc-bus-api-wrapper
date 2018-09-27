@@ -1,5 +1,5 @@
 /*
- * Wrapper function for Service related end points
+ * Wrapper const for Service related end points
  */
 
 const helper = require('./common/helper')
@@ -9,7 +9,7 @@ const helper = require('./common/helper')
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function getServices (config) {
+const getServices = async (config) => {
   return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/services`, null)
 }
 
@@ -18,7 +18,7 @@ function getServices (config) {
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function headServices (config) {
+const headServices = async (config) => {
   return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/services`, null)
 }
 
@@ -28,7 +28,7 @@ function headServices (config) {
  * @param {Object} reqBody Body of the request
  * @returns {Promise}
  */
-function createService (config, reqBody) {
+const createService = async (config, reqBody) => {
   return helper.reqToBusAPI(config, 'POST', `${config.BUSAPI_URL}/bus/services`, reqBody)
 }
 
@@ -38,7 +38,7 @@ function createService (config, reqBody) {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-function getService (config, serviceName) {
+const getService = async (config, serviceName) => {
   return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/services/${serviceName}`, null)
 }
 
@@ -48,7 +48,7 @@ function getService (config, serviceName) {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-function headService (config, serviceName) {
+const headService = async (config, serviceName) => {
   return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/services/${serviceName}`, null)
 }
 
@@ -59,7 +59,7 @@ function headService (config, serviceName) {
  * @param {Object} reqBody Body of the request
  * @returns {Promise}
  */
-function updateService (config, serviceName, reqBody) {
+const updateService = async (config, serviceName, reqBody) => {
   return helper.reqToBusAPI(config, 'PUT', `${config.BUSAPI_URL}/bus/services/${serviceName}`, reqBody)
 }
 
@@ -70,7 +70,7 @@ function updateService (config, serviceName, reqBody) {
  * @param {Object} reqBody Body of the request
  * @returns {Promise}
  */
-function patchService (config, serviceName, reqBody) {
+const patchService = async (config, serviceName, reqBody) => {
   return helper.reqToBusAPI(config, 'PATCH', `${config.BUSAPI_URL}/bus/services/${serviceName}`, reqBody)
 }
 
@@ -80,7 +80,7 @@ function patchService (config, serviceName, reqBody) {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-function deleteService (config, serviceName) {
+const deleteService = async (config, serviceName) => {
   return helper.reqToBusAPI(config, 'DELETE', `${config.BUSAPI_URL}/bus/services/${serviceName}`, null)
 }
 
@@ -90,7 +90,7 @@ function deleteService (config, serviceName) {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-function getServicePayloads (config, serviceName) {
+const getServicePayloads = async (config, serviceName) => {
   return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, null)
 }
 
@@ -100,7 +100,7 @@ function getServicePayloads (config, serviceName) {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-function headServicePayloads (config, serviceName) {
+const headServicePayloads = async (config, serviceName) => {
   return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, null)
 }
 
@@ -111,7 +111,7 @@ function headServicePayloads (config, serviceName) {
  * @param {Object} reqBody Body of the request
  * @returns {Promise}
  */
-function createServicePayload (config, serviceName, reqBody) {
+const createServicePayload = async (config, serviceName, reqBody) => {
   return helper.reqToBusAPI(config, 'POST', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, reqBody)
 }
 
@@ -122,7 +122,7 @@ function createServicePayload (config, serviceName, reqBody) {
  * @param (String) payloadName Payload name
  * @returns {Promise}
  */
-function getServicePayload (config, serviceName, payloadName) {
+const getServicePayload = async (config, serviceName, payloadName) => {
   return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads/${payloadName}`, null)
 }
 
@@ -133,7 +133,7 @@ function getServicePayload (config, serviceName, payloadName) {
  * @param (String) payloadName Payload name
  * @returns {Promise}
  */
-function headServicePayload (config, serviceName, payloadName) {
+const headServicePayload = async (config, serviceName, payloadName) => {
   return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads/${payloadName}`, null)
 }
 
@@ -145,7 +145,7 @@ function headServicePayload (config, serviceName, payloadName) {
  * @param {Object} reqBody Body of the request
  * @returns {Promise}
  */
-function updateServicePayload (config, serviceName, payloadName, reqBody) {
+const updateServicePayload = async (config, serviceName, payloadName, reqBody) => {
   return helper.reqToBusAPI(config, 'PUT', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads/${payloadName}`, reqBody)
 }
 
@@ -157,7 +157,7 @@ function updateServicePayload (config, serviceName, payloadName, reqBody) {
  * @param {Object} reqBody Body of the request
  * @returns {Promise}
  */
-function patchServicePayload (config, serviceName, payloadName, reqBody) {
+const patchServicePayload = async (config, serviceName, payloadName, reqBody) => {
   return helper.reqToBusAPI(config, 'PATCH', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads/${payloadName}`, reqBody)
 }
 
@@ -168,7 +168,7 @@ function patchServicePayload (config, serviceName, payloadName, reqBody) {
  * @param (String) payloadName Payload name
  * @returns {Promise}
  */
-function deleteServicePayload (config, serviceName, payloadName) {
+const deleteServicePayload = async (config, serviceName, payloadName) => {
   return helper.reqToBusAPI(config, 'DELETE', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads/${payloadName}`, null)
 }
 

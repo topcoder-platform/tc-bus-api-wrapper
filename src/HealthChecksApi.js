@@ -9,7 +9,7 @@ const helper = require('./common/helper')
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function getHealth (config) {
+const getHealth = async (config) => {
   return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/health`, null)
 }
 
@@ -18,7 +18,7 @@ function getHealth (config) {
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-function headHealth (config) {
+const headHealth = async (config) => {
   return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/health`, null)
 }
 

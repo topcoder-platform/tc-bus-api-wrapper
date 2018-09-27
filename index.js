@@ -25,82 +25,82 @@ module.exports = (config) => {
   // Export functions
   return {
     // Event API functions
-    postEvent: (reqBody) => {
+    postEvent: async (reqBody) => {
       return require('./src/EventsApi').postEvent(config, reqBody)
     },
-    postError: (reqBody) => {
+    postError: async (reqBody) => {
       return require('./src/EventsApi').postError(config, reqBody)
     },
 
     // Topics API functions
-    getTopics: () => {
+    getTopics: async () => {
       return require('./src/TopicsApi').getTopics(config)
     },
-    headTopics: () => {
+    headTopics: async () => {
       return require('./src/TopicsApi').headTopics(config)
     },
 
     // Health checks API functions
-    getHealth: () => {
+    getHealth: async () => {
       return require('./src/HealthChecksApi').getHealth(config)
     },
-    headHealth: () => {
+    headHealth: async () => {
       return require('./src/HealthChecksApi').headHealth(config)
     },
 
     // Placeholder API functions
-    clearPlaceholdersCache: () => {
+    clearPlaceholdersCache: async () => {
       return require('./src/PlaceholdersApi').clearPlaceholdersCache(config)
     },
 
     // Service API functions
-    getServices: () => {
+    getServices: async () => {
       return require('./src/ServiceApi').getServices(config)
     },
-    headServices: () => {
+    headServices: async () => {
       return require('./src/ServiceApi').headServices(config)
     },
-    createService: (reqBody) => {
+    createService: async (reqBody) => {
       return require('./src/ServiceApi').createService(config, reqBody)
     },
-    getService: (serviceName) => {
+    getService: async (serviceName) => {
       return require('./src/ServiceApi').getService(config, serviceName)
     },
-    headService: (serviceName) => {
+    headService: async (serviceName) => {
       return require('./src/ServiceApi').headService(config, serviceName)
     },
-    updateService: (serviceName, reqBody) => {
+    updateService: async (serviceName, reqBody) => {
       return require('./src/ServiceApi').updateService(config, serviceName, reqBody)
     },
-    patchService: (serviceName, reqBody) => {
+    patchService: async (serviceName, reqBody) => {
       return require('./src/ServiceApi').patchService(config, serviceName, reqBody)
     },
-    deleteService: (serviceName) => {
+    deleteService: async (serviceName) => {
       return require('./src/ServiceApi').deleteService(config, serviceName)
     },
 
-    getServicePayloads: (serviceName) => {
+    getServicePayloads: async (serviceName) => {
       return require('./src/ServiceApi').getServicePayloads(config, serviceName)
     },
-    headServicePayloads: (serviceName) => {
+    headServicePayloads: async (serviceName) => {
       return require('./src/ServiceApi').headServicePayloads(config, serviceName)
     },
-    createServicePayload: (serviceName, reqBody) => {
+    createServicePayload: async (serviceName, reqBody) => {
       return require('./src/ServiceApi').createServicePayload(config, serviceName, reqBody)
     },
-    getServicePayload: (serviceName, payloadName) => {
+    getServicePayload: async (serviceName, payloadName) => {
       return require('./src/ServiceApi').getServicePayload(config, serviceName, payloadName)
     },
-    headServicePayload: (serviceName, payloadName) => {
+    headServicePayload: async (serviceName, payloadName) => {
       return require('./src/ServiceApi').headServicePayload(config, serviceName, payloadName)
     },
-    updateServicePayload: (serviceName, payloadName, reqBody) => {
+    updateServicePayload: async (serviceName, payloadName, reqBody) => {
       return require('./src/ServiceApi').updateServicePayload(config, serviceName, payloadName, reqBody)
     },
-    patchServicePayload: (serviceName, payloadName, reqBody) => {
+    patchServicePayload: async (serviceName, payloadName, reqBody) => {
       return require('./src/ServiceApi').patchServicePayload(config, serviceName, payloadName, reqBody)
     },
-    deleteServicePayload: (serviceName, payloadName) => {
+    deleteServicePayload: async (serviceName, payloadName) => {
       return require('./src/ServiceApi').deleteServicePayload(config, serviceName, payloadName)
     }
 
