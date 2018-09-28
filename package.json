@@ -1,24 +1,19 @@
 {
-  "name": "topcoder_meta_services_rest_api",
-  "version": "5.0.0",
-  "description": "REST_API_for_Topcoder_Meta_Services_This_describes_a_service_that_can_give_information_on_other_services_existing_on_Topcoder_Available_service_links_can_be_listed_by_sending_GET_request__Also_each_service_can_return_links_to_further_services_in_their_responses__Pagination__Requests_that_return_multiple_items_will_be_paginated_to_20_items_by_default__You_can_specify__further_pages_with_the_page_parameter__You_can_also_set_a_custom_page__size_up_to_100_with_the_perPage_parameter___Pagination_response_data_is_included_in_http_headers__By_Default_the_response_header_contains_links_with_next_last_first_prev_resource_links_",
-  "license": "Unlicense",
-  "main": "src/index.js",
+  "name": "tc-bus-api-wrapper",
+  "version": "1.0.0",
+  "description": "Wrapper for Topcoder Bus API",
+  "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --recursive"
-  },
-  "browser": {
-    "fs": false
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "dependencies": {
-    "superagent": "3.5.2"
+    "joi": "^13.4.0",
+    "lodash": "^4.17.10",
+    "superagent": "^3.8.3",
+    "tc-core-library-js": "appirio-tech/tc-core-library-js.git#feature/m2mtoken"
   },
   "devDependencies": {
-    "mocha": "~2.3.4",
-    "sinon": "1.17.3",
-    "expect.js": "~0.3.1"
-  },
-  "engines": {
-    "node": "^8"
+    "standard": "^12.0.1"
   }
 }
