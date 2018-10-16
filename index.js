@@ -54,11 +54,11 @@ module.exports = (config) => {
     },
 
     // Service API functions
-    getServices: async () => {
-      return require('./src/ServiceApi').getServices(config)
+    getServices: async (opts) => {
+      return require('./src/ServiceApi').getServices(config, opts)
     },
-    headServices: async () => {
-      return require('./src/ServiceApi').headServices(config)
+    headServices: async (opts) => {
+      return require('./src/ServiceApi').headServices(config, opts)
     },
     createService: async (reqBody) => {
       return require('./src/ServiceApi').createService(config, reqBody)
@@ -79,11 +79,11 @@ module.exports = (config) => {
       return require('./src/ServiceApi').deleteService(config, serviceName)
     },
 
-    getServicePayloads: async (serviceName) => {
-      return require('./src/ServiceApi').getServicePayloads(config, serviceName)
+    getServicePayloads: async (serviceName, opts) => {
+      return require('./src/ServiceApi').getServicePayloads(config, serviceName, opts)
     },
-    headServicePayloads: async (serviceName) => {
-      return require('./src/ServiceApi').headServicePayloads(config, serviceName)
+    headServicePayloads: async (serviceName, opts) => {
+      return require('./src/ServiceApi').headServicePayloads(config, serviceName, opts)
     },
     createServicePayload: async (serviceName, reqBody) => {
       return require('./src/ServiceApi').createServicePayload(config, serviceName, reqBody)

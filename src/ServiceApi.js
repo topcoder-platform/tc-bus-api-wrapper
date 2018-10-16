@@ -9,8 +9,9 @@ const helper = require('./common/helper')
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-const getServices = async (config) => {
-  return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/services`, null)
+const getServices = async (config, opts) => {
+  const url = helper.buildURLwithParams(`${config.BUSAPI_URL}/bus/services`, opts)
+  return helper.reqToBusAPI(config, 'GET', url, null)
 }
 
 /**
@@ -18,8 +19,9 @@ const getServices = async (config) => {
  * @param {Object} config Configuration object
  * @returns {Promise}
  */
-const headServices = async (config) => {
-  return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/services`, null)
+const headServices = async (config, opts) => {
+  const url = helper.buildURLwithParams(`${config.BUSAPI_URL}/bus/services`, opts)
+  return helper.reqToBusAPI(config, 'HEAD', url, null)
 }
 
 /**
@@ -90,8 +92,9 @@ const deleteService = async (config, serviceName) => {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-const getServicePayloads = async (config, serviceName) => {
-  return helper.reqToBusAPI(config, 'GET', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, null)
+const getServicePayloads = async (config, serviceName, opts) => {
+  const url = helper.buildURLwithParams(`${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, opts)
+  return helper.reqToBusAPI(config, 'GET', url, null)
 }
 
 /**
@@ -100,8 +103,9 @@ const getServicePayloads = async (config, serviceName) => {
  * @param {String} serviceName Service name
  * @returns {Promise}
  */
-const headServicePayloads = async (config, serviceName) => {
-  return helper.reqToBusAPI(config, 'HEAD', `${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, null)
+const headServicePayloads = async (config, serviceName, opts) => {
+  const url = helper.buildURLwithParams(`${config.BUSAPI_URL}/bus/services/${serviceName}/payloads`, opts)
+  return helper.reqToBusAPI(config, 'HEAD', url, null)
 }
 
 /**

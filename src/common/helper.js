@@ -62,6 +62,23 @@ const reqToBusAPI = async (config, reqType, path, reqBody) => {
   })
 }
 
+/*
+ * Function to build URL with query parameters
+ * @param {String} url Bus API URL
+ * @param {Object} params Query parameters
+ * @returns {String} URL with query parameters
+ */
+const buildURLwithParams = (url, params) => {
+  let queryParams = '?'
+  if (params) {
+    for (let key in params) {
+      queryParams += `${key}=${params[key]}&`
+    }
+  }
+  return url + queryParams
+}
+
 module.exports = {
-  reqToBusAPI
+  reqToBusAPI,
+  buildURLwithParams
 }

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "lint:fix": "standard --fix"
+    "lint:fix": "standard --fix",
+    "test": "mocha test/*.test.js --exit",
+    "cov": "nyc --reporter=html --reporter=text mocha test/*.test.js --exit"
   },
   "dependencies": {
     "joi": "^13.4.0",
@@ -14,6 +16,15 @@
     "tc-core-library-js": "appirio-tech/tc-core-library-js.git#feature/m2mtoken"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.0.1",
     "standard": "^12.0.1"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   }
 }
