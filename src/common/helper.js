@@ -2,13 +2,13 @@
 const m2mAuth = require('tc-core-library-js').auth.m2m
 const request = require('superagent')
 const _ = require('lodash')
+const m2m = m2mAuth(_.pick(config, ['AUTH0_URL', 'AUTH0_AUDIENCE', 'TOKEN_CACHE_TIME', 'AUTH0_PROXY_SERVER_URL']))
 
 /*
  * Function to get M2M token
  * @returns {Promise}
  */
 const getM2Mtoken = async (config) => {
-  const m2m = m2mAuth(_.pick(config, ['AUTH0_URL', 'AUTH0_AUDIENCE', 'TOKEN_CACHE_TIME']))
   return m2m.getMachineToken(config.AUTH0_CLIENT_ID, config.AUTH0_CLIENT_SECRET)
 }
 
