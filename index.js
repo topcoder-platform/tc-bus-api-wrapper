@@ -12,7 +12,8 @@ module.exports = (config) => {
     AUTH0_CLIENT_ID: joi.string().required(),
     AUTH0_CLIENT_SECRET: joi.string().required(),
     BUSAPI_URL: joi.string().uri().trim().required(),
-    KAFKA_ERROR_TOPIC: joi.string().required()
+    KAFKA_ERROR_TOPIC: joi.string().required(),
+    AUTH0_PROXY_SERVER_URL: joi.string()
   })
 
   // Validate the arguments
