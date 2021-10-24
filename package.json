@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "joi": "^13.4.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "superagent": "^3.8.3",
     "tc-core-library-js": "appirio-tech/tc-core-library-js.git#v2.6.4"
   },
