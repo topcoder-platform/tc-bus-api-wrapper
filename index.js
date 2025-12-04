@@ -17,7 +17,7 @@ module.exports = (config) => {
   })
 
   // Validate the arguments
-  const result = joi.validate(config, schema)
+  const result = schema.validate(config)
 
   if (result.error) {
     throw new Error(result.error.details[0].message)
